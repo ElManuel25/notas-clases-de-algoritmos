@@ -1,0 +1,14 @@
+def qs(data):
+    menores = []
+    mayores = [] 
+    iguales = []
+    if len(data) <= 1:
+        return data          
+    for i in data:
+        if  i < data[0]:
+            menores.append(i)
+        if i > data[0]:
+            mayores.append(i) 
+        if i == data[0]:
+            iguales.append(i)
+    return qs(menores) + iguales + qs(mayores)
